@@ -2,7 +2,7 @@
 
 A **MERN** Stack web application that allows users to create an account, generate strong passwords, and log in securely. The app uses MongoDB with **Mongoose** for data storage, **Express** and Node.js for the backend, and **React** for the frontend. It also incorporates **JSON Web Token** (JWT) for authentication and **React Hot Toast** for displaying messages.
 
-![App Screenshot](./public/screenshot.png)
+![App Screenshot](./client/public/screenshot.png)
 
 ## Key Features
 
