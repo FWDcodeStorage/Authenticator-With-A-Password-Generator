@@ -5,6 +5,9 @@ const UserModel = require("./models/user");
 
 const app = express();
 
+// env config
+require('dotenv').config({path: './.env'})
+
 //middlewares
 //a build in middleware function in express, it parses icomin json requests and puts the parsed data in req.body
 
@@ -16,7 +19,7 @@ app.use(cors());
 
 // connect db to a localhost:27017 and premaid db
 //it is always better practice to use path this way
-mongoose.connect("mongodb://127.0.0.1:27017/auth");
+mongoose.connect(process.env.MONGO_PORT);
 
 //create a route
 //register user
@@ -72,6 +75,6 @@ app.post("/login", (req, res) => {
 });
 
 //running server
-app.listen(3001, () => {
-  console.log("Server is running on port 3001");
+app.listen(process.env.PORT, () => {
+  console.log("Server is running");
 });
