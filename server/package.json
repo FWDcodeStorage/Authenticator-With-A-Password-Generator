@@ -4,14 +4,16 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "dev": "nodemon index.js"
   },
   "author": "milica",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "generate-password": "^1.7.0",
     "mongoose": "^7.4.0",
     "nodemon": "^3.0.1"
   }

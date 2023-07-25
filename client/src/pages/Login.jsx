@@ -16,7 +16,7 @@ const Login = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3001/login", { name, password })
+      .post("http://localhost:3000/login", { name, password })
       .then((result) => {
         console.log(result.data);
         if (result.data === "success") {
