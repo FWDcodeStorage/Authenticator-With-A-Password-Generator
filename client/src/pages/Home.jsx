@@ -66,7 +66,7 @@ const Home = () => {
 
           
           <div>
-            <input className="m-4" type="checkbox" id="includeLetters" name="includeLetters"  checked/>
+            <input className="m-4" type="checkbox" id="includeLetters" name="includeLetters"  onChange={handleChange} checked={formData.includeLetters}/>
             <label className="text-green-100" htmlFor="includeLetters">Include letters</label>
           </div>
 
