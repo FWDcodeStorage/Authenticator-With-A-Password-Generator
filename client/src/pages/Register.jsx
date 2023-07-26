@@ -18,7 +18,7 @@ const Register = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3001/register", { name, email, password, file })
+      .post("http://localhost:3000/register", { name, email, password, file })
       .then((result) => {
         console.log(result.data); // New user data or error message
         toast.success("Succesfully registered!");
