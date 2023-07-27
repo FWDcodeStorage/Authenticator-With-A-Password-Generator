@@ -8,6 +8,9 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 
+//component
+import PasswordGenerator from "./components/PasswordGenerator";
+
 //npm install react-hot-toast
 //for displaying messages (error/success)
 import { Toaster } from "react-hot-toast";
@@ -20,6 +23,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path="/pg" element={<PasswordGenerator />} />
           <Route path='/home' element={<Home />} />
         </Routes>
       </div>

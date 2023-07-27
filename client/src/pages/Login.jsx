@@ -8,7 +8,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   //states /for saving users input values
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   //after a form submit, send data to server and there we handled the rest - saving data to our db
@@ -16,10 +16,11 @@ const Login = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3001/login", { name, password })
+      .post("http://localhost:3001/login", { email, password })
       .then((result) => {
         console.log(result.data);
-        if (result.data === "success") {
+        const { user, token } = result.data;
+        if (user) {
           toast.success("Welcome");
           navigate("/home");
         } else {
@@ -61,11 +62,11 @@ const Login = () => {
         <div className='flex flex-col justify-center items-center gap-4'>
           <input
             className='w-full px-2 py-1 outline-none border-2 border-gray-500 rounded-md'
-            type='text'
-            value={name}
-            placeholder='Username'
+            type='email'
+            value={email}
+            placeholder='Email'
             required
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <input
             className='w-full px-2 py-1 outline-none border-2 border-gray-500 rounded-md'
@@ -85,7 +86,7 @@ const Login = () => {
       </form>
       <p className='text-[.5rem] mt-1'>
         You don't have an account?
-        <a href='/register' className='text-red-400 ml-1'>
+        <a href='/register' className='text-red-400 ml-1 cursor-pointer'>
           Register now!
         </a>
       </p>

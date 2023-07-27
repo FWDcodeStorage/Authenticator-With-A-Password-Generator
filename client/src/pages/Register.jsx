@@ -117,14 +117,22 @@ const Register = () => {
           required
           onChange={(e) => setEmail(e.target.value)}
         />
-        <input
-          className='w-full px-2 py-1 outline-none border-2 border-gray-500 rounded-md'
-          placeholder='Password'
-          type='password'
-          value={password}
-          required
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <div className='w-full flex flex-col gap-0'>
+          <input
+            className='w-full px-2 py-1 outline-none border-2 border-gray-500 rounded-md'
+            placeholder='Password'
+            type='password'
+            value={password}
+            required
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <p className='text-[.5rem] mt-1 px-2'>
+            Use a{" "}
+            <a href='/pg' className='text-blue-400 ml-1 cursor-pointer'>
+              Strong Password Generator
+            </a>
+          </p>
+        </div>
 
         <button
           className='w-full px-2 py-1 outline-none border-2 border-gray-500 rounded-md text-lg font-semibold tracking-wider bg-green-400 pointer hover:scale-95 transition-transform duration-75'
